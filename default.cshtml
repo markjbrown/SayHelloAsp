@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+@{
+var yourname = "";
+var respmsg = "";
+   if(IsPost)
+   {
+       yourname = Request["txtname"];
+       if (yourname.IsEmpty() != true){
+        respmsg = yourname + " says, Hey Everybody!";
+       }
+   }
+}
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple Hello World Demo in ASP Pages</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    </head>
+    <body>
+        <h1>Type in your name to say Hello!</h1>
+        <h2>Fill in your name, then click <strong>Submit</strong> to Say Hello.</h2>
+        <form method="POST" action="" >
+        <input type="text" name="txtname" id="txtname"/>
+        <input type="submit" name="bsubmit" value="Submit" />
+        </form>
+
+        <h2>@respmsg</h2>
+    </body>
+</html>
