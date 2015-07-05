@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 @{
 var yourname = "";
+var region = Environment.GetEnvironmentVariable("REGION_NAME");;
 var respmsg = "";
    if(IsPost)
    {
        yourname = Request["txtname"];
        if (yourname.IsEmpty() != true){
-        respmsg = yourname + " says, Hey go fork yourself!";
+        respmsg = yourname + " says, Hello from " + region;
        }
    }
 }
